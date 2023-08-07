@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
 <body>
- <!-- Twitch video player -->
-    <iframe
-        src="https://player.twitch.tv/?channel=klownstein"
-        height="480"
-        width="640"
-        allowfullscreen
-    ></iframe>
- 
-    <!-- Twitch chat -->
-    <iframe
-        frameborder="0"
-        scrolling="no"
-        id="chat_embed"
-        src="https://www.twitch.tv/embed/klownstein/chat"
-        height="500"
-        width="350"
-    ></iframe>
+<!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed JavaScript file -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "klownstein",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["pileofboxes.github.io", "othersite.example.com"]
+      });
+    </script>
 </body>
 </html>
